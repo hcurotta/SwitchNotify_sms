@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  to: MyString
+  from: MyString
+  from_country: MyString
+  from_city: MyString
+  from_state: MyString
+  message: MyText
+  notify_result: MyString
+
+two:
+  to: MyString
+  from: MyString
+  from_country: MyString
+  from_city: MyString
+  from_state: MyString
+  message: MyText
+  notify_result: MyString

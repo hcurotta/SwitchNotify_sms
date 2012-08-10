@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Twilio:</b>
+  <%= @notifier.twilio_id %>
+</p>
+
+<p>
+  <b>Device:</b>
+  <%= @notifier.device_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_notifier_path(@notifier) %> |
+<%= link_to 'Back', notifiers_path %>
