@@ -1,24 +1,27 @@
 <h1>Activity Log</h1>
 
 <p id="notice"><%= notice %></p>
-
+<div class = "datagrid">
 <table>
-	<tr>
+	<thead><tr>
 		<th>From</th>
 		<th>To</th>
 		<th>Message</th>
-		<th>Received At</th>
+		<th>Received</th>
 		<th>Device</th>
 		<th>Status</th>
-	</tr>
+	</tr></thead>
 	<% @logs.each do |log| %>
-	<tr>
+	<tbody>
+	<tr  class="<%= cycle("", "alt") %>">
 		<td><%= log.from %></td>
 		<td><%= log.to %></td>
 		<td><%= log.message %></td>
-		<td><%= log.created_at %></td>
+		<td><%= time_ago_in_words(log.created_at) %> ago</td>
 		<td><%= log.notifier.device_id %></td>
 		<td><%= log.notify_result %></td>
 	</tr>
+	</tbody>	
 	<% end %>
 </table>
+</div>

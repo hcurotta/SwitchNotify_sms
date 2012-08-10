@@ -1,6 +1,8 @@
 <h1>Listing notifiers</h1>
 
-<table class = "table">
+<div class = "datagrid">
+<table>
+	<thead>
   <tr>
     <th>Twilio</th>
     <th>Device</th>
@@ -8,17 +10,21 @@
     <th></th>
     <th></th>
   </tr>
+</thead>
 
 <% @notifiers.each do |notifier| %>
-  <tr>
+<tbody>
+  <tr  class="<%= cycle("", "alt") %>">
     <td><%= notifier.twilio_id %></td>
     <td><%= notifier.device_id %></td>
     <td><%= link_to 'Show', notifier %></td>
     <td><%= link_to 'Edit', edit_notifier_path(notifier) %></td>
     <td><%= link_to 'Destroy', notifier, method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </tr>
+</tbody>
 <% end %>
 </table>
+</div>
 
 <br />
 
