@@ -140,3 +140,12 @@ color: #000000;
 .datagrid table tbody td:first-child {
 border: none;
 }
+
+
+img {
+opacity: 0.4;
+}
+
+img:hover {
+opacity: 0.8;
+}
