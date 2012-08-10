@@ -52,7 +52,7 @@ end
 end
 
 def view_log
-  @logs = Log.all
+  @logs = Log.all(:order => "created_at DESC")
   
 end
 
