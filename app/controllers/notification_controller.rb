@@ -7,6 +7,8 @@ def new
   
   notifiers = Notifier.find_all_by_twilio_id(params[:AccountSid])
   
+  urls = []
+  
   if notifiers.any?
   
   notifiers.each do |device|
@@ -25,8 +27,10 @@ def new
      log.notify_result = @result
      log.save
      
-  end
+     urls <<  'http://swtch.co/device/'+device.device_id+'/pulse'
      
+  end
+    render :text => urls
   else  
     render :text => '<?xml version="1.0" encoding="UTF-8" ?>   
     <Response>
