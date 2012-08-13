@@ -1,7 +1,7 @@
 <%= form_for(@notifier) do |f| %>
   <% if @notifier.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@notifier.errors.count, "error") %> prohibited this notifier from being saved:</h2>
+    <div class="error_explanation">
+      <h2>Couldn't create notifier - <%= pluralize(@notifier.errors.count, "field") %> need fixing:</h2>
 
       <ul>
       <% @notifier.errors.full_messages.each do |msg| %>
@@ -12,14 +12,14 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :name, "What's your Twilio Account?" %><br />
+    <%= f.label :name, "What's your Twilio Account ID?" %><br />
     <%= f.text_field :twilio_id, :placeholder => "Twilio Account ID", :class => 'field'  %>
   </div>
   <div class="field">
-    <%= f.label :name, "What device do you want to alert?" %><br />
+    <%= f.label :name, "What light do you want to flash?" %><br />
     <%= f.text_field :device_id, :placeholder => "Switch Device ID", :class => 'field' %>
   </div>
   <div class="actions">
-    <%= f.submit "Create!", :class => 'button' %>
+    <%= f.submit "Create", :class => 'button' %>
   </div>
 <% end %>

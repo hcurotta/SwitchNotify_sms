@@ -26,7 +26,7 @@ def new
      log.message = params[:Body]
      log.notify_result = @result
      log.save
-http://www.switchdevices.com/#hero     
+
      urls <<  'http://swtch.co/device/'+device.device_id+'/pulse'
      
   end
@@ -53,6 +53,11 @@ end
 
 def view_log
   @logs = Log.all(:order => "created_at DESC")
+  
+  respond_to do |format|
+    format.html # index.html.erb
+    format.json { render json: @logs }
+  end
   
 end
 
